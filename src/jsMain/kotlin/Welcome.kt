@@ -1,13 +1,12 @@
 import kotlinx.html.InputType
 import kotlinx.html.js.onChangeFunction
+import kotlinx.html.style
 import org.w3c.dom.HTMLInputElement
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.dom.attrs
-import react.dom.div
-import react.dom.input
+import react.dom.*
 
 external interface WelcomeProps : RProps {
     var name: String
@@ -23,17 +22,57 @@ class Welcome(props: WelcomeProps) : RComponent<WelcomeProps, WelcomeState>(prop
     }
 
     override fun RBuilder.render() {
-        div {
-            +"Hello, ${state.name}"
+        h1 {
+            +"mess"
         }
-        input {
-            attrs {
-                type = InputType.text
-                value = state.name
-                onChangeFunction = { event ->
-                    setState(
-                            WelcomeState(name = (event.target as HTMLInputElement).value)
-                    )
+        div {
+            ul {
+                li {
+                    img {
+                        attrs {
+                            src = "https://sun1-57.userapi.com/s/v1/ig1/3oUoBxpwx6_BhXuRxDV2PaMaqfv5hlAbAGsMm37HYbDj9jSNbgZc9CruOL7PE_YA3dfPJrMO.jpg?size=100x100&quality=96&crop=59,59,472,472&ava=1"
+                        }
+                    }
+                    span {
+                        +"Илюха"
+                    }
+                }
+                li {
+                    img {
+                        attrs {
+                            src = "https://sun1-57.userapi.com/s/v1/ig1/3oUoBxpwx6_BhXuRxDV2PaMaqfv5hlAbAGsMm37HYbDj9jSNbgZc9CruOL7PE_YA3dfPJrMO.jpg?size=100x100&quality=96&crop=59,59,472,472&ava=1"
+                        }
+                    }
+                    span {
+                        +"Злобный клон"
+                    }
+                }
+            }
+            div {
+                ul {
+                    li {
+                        +"Илюха пишет: привет, пойдуем гулять?)"
+                    }
+                    li {
+                        +"Илюха пишет: ну давай, не ломайся"
+                    }
+                    li {
+                        +"Вы пишите: чел ты кто"
+                    }
+                    li {
+                        +"Илюха пишет: это я =)"
+                    }
+                }
+                input {
+                    attrs {
+                        type = InputType.text
+                        value = state.name
+                        onChangeFunction = { event ->
+                            setState(
+                                WelcomeState(name = (event.target as HTMLInputElement).value)
+                            )
+                        }
+                    }
                 }
             }
         }
