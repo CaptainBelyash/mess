@@ -1,3 +1,4 @@
+import database.DataBase
 import io.ktor.application.call
 import io.ktor.html.respondHtml
 import io.ktor.http.HttpStatusCode
@@ -25,6 +26,10 @@ fun HTML.index() {
 }
 
 fun main() {
+    val dataBase = DataBase()
+    dataBase.setUpConnection()
+    dataBase.createUser("Илья")
+
     embeddedServer(Netty, port = 8080, host = "127.0.0.1") {
         routing {
             get("/") {

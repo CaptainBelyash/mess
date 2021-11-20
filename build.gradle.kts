@@ -30,6 +30,7 @@ kotlin {
         }
     }
     sourceSets {
+        val exposedVersion = "0.34.1"
         val commonMain by getting
         val commonTest by getting {
             dependencies {
@@ -43,6 +44,10 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
                 implementation("io.ktor:ktor-websockets:1.6.2")
                 implementation("ch.qos.logback:logback-classic:1.2.7")
+                implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+                implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
+                implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+                implementation("org.postgresql:postgresql:42.2.2")
             }
         }
         val jvmTest by getting
