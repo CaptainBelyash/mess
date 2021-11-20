@@ -38,9 +38,11 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-server-netty:1.5.2")
-                implementation("io.ktor:ktor-html-builder:1.5.2")
+                implementation("io.ktor:ktor-server-netty:1.6.2")
+                implementation("io.ktor:ktor-html-builder:1.6.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
+                implementation("io.ktor:ktor-websockets:1.6.2")
+                implementation("ch.qos.logback:logback-classic:1.2.7")
             }
         }
         val jvmTest by getting
